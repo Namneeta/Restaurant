@@ -1,0 +1,91 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h2>Restaurant Record App</h2>
+         <div class="d-flex">
+             <button class="btn btn-success" (click)="clickAddResto()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Restaurant</button>
+             &nbsp;<button routerLink="/login" class="btn btn-danger md-3">Logout</button>
+         </div>
+
+
+    </div>
+</nav>
+<!--Jamotran-->
+<div class="jumbotron mt-4">
+    <h1 class="display-4">Welcome In Our Restaurant</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+<!--End Jamotran-->
+ <!--Add A Table For Records-->
+ <table class="table mt-4">
+     <thead>
+     <tr>
+         <th scope="col">Restaurant ID</th>
+         <th scope="col"> Name</th>
+         <th scope="col">Email ID</th>
+         <th scope="col">Mobile Number </th>
+         <th scope="col">Address</th>
+         <th scope="col">Service</th>
+         <th scope="col">Action</th>
+     </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allRestaurantData">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.services}}</td>
+            <td>
+                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEditRestaurant(data)">Edit</button>&nbsp;
+               
+                <button class="btn btn-danger" (click)="deleteResto(data)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+ </table>
+
+ <!--Modal Start-->
+ <!-- Button trigger modal -->
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Restaurant Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue" >
+              <label> Name</label>
+              <input type="text"  formControlName="name" class="form-control"/>
+              <label> Email</label>
+              <input type="text" formControlName="email" class="form-control"/>
+              <label> Mobile Number</label>
+              <input type="text" formControlName="mobile" class="form-control"/>
+              <label> Address</label>
+              <input type="text" formControlName="address" class="form-control"/>
+              <label> Service</label>
+              <input type="text" formControlName="services" class="form-control"/>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear</button>
+          <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addRestaurant()">Add Details</button>
+          <button type="button" *ngIf="showbtn" class="btn btn-primary" (click)="updateRestaurant()">Update Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!--End Modal-->
+ <!--Second Modal for Edit-->
+ 
+ <!--End Second Modal for edit button-->

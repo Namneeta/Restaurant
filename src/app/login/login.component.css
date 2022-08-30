@@ -1,0 +1,25 @@
+h2{
+    color:navy;
+    text-align: center;
+}
+h5{
+    text-align: center;
+}
+input{
+     background: transparent;
+     border: none;
+     border-radius: 0px;
+     border-bottom: 2px solid navy;
+}
+.card{
+    margin-top:15px;
+    border: 1px solid navy;
+    width: 550px;
+    padding : 45px;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+}
+.row{
+    background-color: lightblue;
+}

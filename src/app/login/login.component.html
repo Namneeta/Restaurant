@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row ">
+     
+        <div class="col-md-6 loginform">
+            <div class="card">
+               
+                    <form action="" [formGroup]="loginForm">
+                        <h2>Restaurant Login 😊😊</h2>
+                        <h5>Feel Free To Login</h5><hr/>
+                        <label>Email Id</label>
+                        <input type="text" formControlName="email" placeholder="Enter Email" class="form-control" />
+                        <label for="">Password</label>
+                        <input type="text" formControlName="password" placeholder="Enter Password" class="form-control" />
+                        <br />
+                        <button type="submit" class="btn btn-success" (click)="loginIn()">LOGIN</button>
+                    </form>
+                  <a routerLink="/singup"> New User ? click to Signup !</a>
+            </div>
+        </div>
+     
+    </div>
+</div>

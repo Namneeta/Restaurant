@@ -1,0 +1,15 @@
+.card{
+    margin-top:15px;
+    border: 1px solid navy;
+    width: 550px;
+    padding : 45px;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+}
+input{
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid navy;
+}
